@@ -3,7 +3,10 @@ package app.mikankenshi.album
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import app.mikankenshi.album.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +16,20 @@ class MainActivity : AppCompatActivity() {
 
         var intent: Intent = Intent(this, Preview::class.java)
 
-        imageView2.setOnClickListener {
+        val names = arrayOf("A","B","C")
+        val items = Array(names.size, {i -> names[i]})
+
+        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items)
+        listView.adapter = adapter
+
+
+        listView.setOnItemClickListener { _, view, _, _ ->
+            val textView = view.findViewById<TextView>(android.R.id.text1)
+            intent.putExtra("image",R.drawable.keybord)
+            startActivity(intent)
+
+        }
+       /* imageView2.setOnClickListener {
             intent.putExtra("image",R.drawable.cute)
             startActivity(intent)
         }
@@ -41,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("image",R.drawable.cute)
             startActivity(intent)
         }
-
+*/
 
     }
 }
