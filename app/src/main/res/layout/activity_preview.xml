@@ -9,8 +9,8 @@
 
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/cute" android:id="@+id/preview"
-            android:layout_weight="1" android:layout_margin="16dp"/>
+            android:layout_height="wrap_content" app:srcCompat="@drawable/keybord" android:id="@+id/preview"
+            android:layout_weight="1"/>
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"
@@ -20,5 +20,6 @@
             android:text="Back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/back" android:layout_weight="1"
-            android:layout_margin="16dp"/>
+            android:layout_margin="16dp" android:textColor="#ECECEC"
+            android:textSize="24sp" android:backgroundTint="#575757"/>
 </LinearLayout>
